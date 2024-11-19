@@ -35,6 +35,10 @@
         border-right-color: black !important; 
     }
 
+    .count {
+        color: var(--lambda-orange);
+    }
+
     /* Button/Container style */
     .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4 {
         border: 1px solid;
@@ -120,14 +124,20 @@
     }
     /* end of Mood styles */
 
-
     /* Styles for the generic table elements in the 'Contacting X', 'Interests' and 'Links' sections */
+    .details-table {
+        border-collapse: collapse;
+    }
     .details-table td {
         background-color: transparent !important;
+        padding: 0px;
         color: white !important;
         font-weight: normal !important;
     }
-    
+    .details-table a {
+        width: 100%;
+        display: flex;
+    }
     /* General styles for link elements */
     a {
         font-weight: bold !important;
@@ -141,7 +151,7 @@
     .f-col { 
         padding: 8px;
     }
-    .f-col:hover, .f-col:focus-within { 
+    .f-col:hover, .details-table tr:hover, .details-table tr:focus-within, .f-col:focus-within { 
         background-color: var(--list-selected);
     }
     .f-col > a {
