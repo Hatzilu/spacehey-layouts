@@ -40,7 +40,7 @@
     }
 
     /* Button/Container style */
-    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4 {
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4, .blog-preview {
         border: 1px solid;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
@@ -72,7 +72,7 @@
     }
 
     /* Inset/List style */
-    .goldsrc-list, .inner, .table-section, input {
+    .goldsrc-list, .inner, .table-section, input, .blog-preview p {
         border: 1px solid !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--list-color) !important;
@@ -82,6 +82,28 @@
         border-right-color: var(--list-color-shadow) !important; 
         color: white !important;
     }
+
+    /* begin of blog */
+    .blog-preview p {
+        position: relative;
+    }
+
+    .blog-preview p:hover, .blog-preview p:focus-within {
+        background-color: var(--list-selected) !important;
+    }
+
+    .blog-preview p > a::before {
+        min-width: 1px;
+    }
+    .blog-preview p > a {
+        position: absolute;
+        right: 5px;
+        width: 100%;
+        color: var(--list-color);
+        text-align: end;
+        margin-left: 5px;
+    }
+    /* end of blog */
 
     /* begin of blurbs */
     .blurbs > .inner {
@@ -181,7 +203,7 @@
     }
     
     /* Highlight friend on hover with the same color as the server select in hl1 */
-    .person:hover, .person:focus-within {
+    .person:hover, .person:focus-within, .blog-preview > p:hover, .blog-preview > p:focus-within {
         background-color: var(--list-selected);
     }
     .person a {
