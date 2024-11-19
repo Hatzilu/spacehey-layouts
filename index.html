@@ -9,6 +9,8 @@
         --list-color-shadow: #89927F;
     
         --list-selected: #958831;
+
+        --lambda-orange: #F37B21;
     }
     
     body {
@@ -22,7 +24,7 @@
     
 
     /* Button/Container style */
-    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report {
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4 {
         border: 1px solid !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
@@ -64,6 +66,14 @@
         color: white !important;
     }
 
+    /* begin of blurbs */
+    .blurbs > .inner {
+        padding: 0px !important;
+    }
+    .blurbs > .inner > .section > h4 {
+        padding: 5px;
+    }
+    /* end of blurbs */
 
     /* begin of Mood styles */
     .mood p:nth-child(2) > b {
@@ -82,6 +92,8 @@
         height: min-content;
     }
     /* end of Mood styles */
+
+
     /* Styles for the generic table elements in the 'Contacting X', 'Interests' and 'Links' sections */
     .details-table td {
         background-color: transparent !important;
@@ -142,6 +154,7 @@
         color: white !important;
         text-align: start !important;
         padding-left: 8px;
+        font-weight: normal !important;
     }
 
     /* Make images smaller to fit the style, and disable default margins */
@@ -201,11 +214,11 @@
     }
 
     .comment-replies small > a:not(:first-child) {
-        margin-left: 8px;
-        padding: 8px;
+        margin-left: 5px;
+        padding: 5px;
     } 
     .report {
-        padding: 8px;
+        padding: 5px;
     }
 
     /* End of comments section */
