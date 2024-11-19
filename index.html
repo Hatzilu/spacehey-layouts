@@ -1,0 +1,112 @@
+<style>
+    :root {
+        --menu-color: #4B5743;
+        --menu-color-highlight: #87937F;
+        --menu-color-shadow: #23291B;
+    
+        --list-color: #353D2E;
+        --list-color-highlight: #222A1B;
+        --list-color-shadow: #89927F;
+    
+        --list-selected: #958831;
+    
+    }
+    
+    body {
+        background: #212121;
+    }
+    
+    main {
+        background: none !important;
+    }
+    
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer {
+        border: 1px solid !important;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        background-color: var(--menu-color) !important;
+        border-top-color: var(--menu-color-highlight) !important;
+        border-bottom-color: var(--menu-color-shadow) !important;
+        border-left-color: var(--menu-color-highlight) !important;
+        border-right-color: var(--menu-color-shadow) !important; 
+        color: white !important;
+    }
+    
+    .goldsrc-list, .inner, .table-section, input {
+        border: 1px solid !important;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        background-color: var(--list-color) !important;
+        border-top-color: var(--list-color-highlight) !important;
+        border-bottom-color: var(--list-color-shadow) !important;
+        border-left-color: var(--list-color-highlight) !important;
+        border-right-color: var(--list-color-shadow) !important; 
+        color: white !important;
+    }
+    
+    .details-table td {
+        background-color: transparent !important;
+        color: white !important;
+        font-weight: normal !important;
+    }
+    
+    a {
+        font-weight: bold !important;
+        color: white !important;
+    }
+    
+    .f-col > a {
+        padding: 3px;
+    }
+    
+    .contact > .heading {
+        background: transparent !important;
+        font-weight: bold;
+    }
+    
+    
+    
+    /* friends list */
+    
+    .friends-grid {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    
+    .person {
+        /* display: grid !important;
+        grid-template-columns: auto auto !important; */
+        display: table-row !important;
+        width: 100% !important;
+    }
+    
+    .person:hover {
+        background-color: var(--list-selected);
+    }
+    .person a {
+        display: table-cell !important;
+    }
+    .person p {
+        color: white !important;
+        text-align: start;
+    }
+    .person img {
+        max-width: 20px !important;
+        max-height: 20px !important;
+    }
+    
+    .friends-grid {
+        counter-reset: friends;
+    }
+    .person {
+        counter-increment: friends;
+    }
+    .friends h4::after {
+        content: " (" counter(friends) ")";
+    }
+    .friends ~ .friends h4::after {
+        content: "";
+    }
+    
+    </style>
+    
+    <div class="goldsrc-container">hi</div>
