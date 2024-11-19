@@ -48,8 +48,8 @@
     }
 
     /* Extra padding for button-like elements */
-    .mood a, .links > li, .profile-info > .inner {
-        padding: 8px 9px;
+    .mood a, .links > li, .profile-info > .inner, .logout-btn {
+        padding: 8px 9px !important;
     }
 
     /* Inset/List style */
@@ -146,7 +146,10 @@
     nav .links a {
         text-shadow: none;
     }
+
+    /* Disable the '|' on link buttons */
+    nav .links li:not(:last-child)::after {
+        content: none;
+    }
     
     </style>
-    
-    <div class="goldsrc-container">hi</div>
