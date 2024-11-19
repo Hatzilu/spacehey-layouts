@@ -22,7 +22,7 @@
     
 
     /* Button/Container style */
-    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner {
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report {
         border: 1px solid !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
@@ -63,7 +63,25 @@
         border-right-color: var(--list-color-shadow) !important; 
         color: white !important;
     }
-    
+
+
+    /* begin of Mood styles */
+    .mood p:nth-child(2) > b {
+        visibility: hidden;
+        max-width: 0px;
+        position: relative;
+        display: flex;
+    }
+    .mood p:nth-child(2) > b::before {
+        content: "View my:";
+        white-space: nowrap;
+        visibility: initial;
+    }
+    .mood p:nth-child(2) > b a {
+        visibility: initial;
+        height: min-content;
+    }
+    /* end of Mood styles */
     /* Styles for the generic table elements in the 'Contacting X', 'Interests' and 'Links' sections */
     .details-table td {
         background-color: transparent !important;
@@ -78,6 +96,15 @@
     }
     
     /* Styles for the buttons of the 'Contacting X' section */
+    .f-row {
+        margin: 0px !important;
+    }
+    .f-col { 
+        padding: 8px;
+    }
+    .f-col:hover { 
+        background-color: var(--list-selected);
+    }
     .f-col > a {
         padding: 3px;
     }
@@ -124,18 +151,65 @@
         margin: 0 !important;
     }
     
-    .friends-grid {
-        counter-reset: friends;
+    /* Start of custom friend counter */
+    .friends:not([id]) > .inner > p {
+        max-height: 0px;
+        margin: 0px;
     }
-    .person {
-        counter-increment: friends;
+    .friends:not([id]) > .inner > p > b:first-child {
+        visibility: hidden;
+        position: relative;
     }
-    .friends h4::after {
-        content: " (" counter(friends) ")";
+    .friends:not([id]) > .inner > p > b:first-child > span {
+        visibility: initial;
+        position: absolute;
+        top: -26px;
+        right: -38px;
+        color: white;
     }
-    .friends ~ .friends h4::after {
-        content: "";
+    .friends:not([id]) > .inner > p > b:first-child > span::before {
+        content: "(";
+
     }
+    .friends:not([id]) > .inner > p > b:first-child > span::after {
+        content: ")";
+
+    }
+    /* end of custom friend counter */
+
+    /* Start of comments section */
+    #comments.friends {
+        margin-top: 20px;
+    }
+
+    #comments.friends > .inner {
+        padding: 0px;
+    }
+    #comments.friends > .inner > p {
+        padding: 5px;
+    }
+    #comments.friends > .inner > table {
+        padding: 7px;
+        border: transparent;
+    }
+    #comments.friends > .inner > table td {
+        background: none;
+        text-align: start;
+    }
+    #comments.friends > .inner > table tr {
+        border: 1px solid white;
+    }
+
+    .comment-replies small > a:not(:first-child) {
+        margin-left: 8px;
+        padding: 8px;
+    } 
+    .report {
+        padding: 8px;
+    }
+
+    /* End of comments section */
+
 
     .mood p {
         padding-top: 8px;
