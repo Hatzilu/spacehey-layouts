@@ -9,4 +9,4 @@ Simply open up `index.html` in your preferred text editor, and paste everything 
 
 ## Known issues 
 
-* Friends counter is currently broken until i figure out how CSS counters work
+* Blog posts always end with "()" i figure out how to fix it with only CSS
