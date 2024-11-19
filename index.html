@@ -22,17 +22,38 @@
         background: none !important;
     }
     
+    
+    /* Button hover style */
+    .mood a:focus, small a:not(:first-child):focus {
+        outline-style: dotted;
+        outline-color: black;
+        outline-offset: -2px;
+        outline-width: 1px;
+        border-top-color: black !important;
+        border-bottom-color: black !important;
+        border-left-color: black !important;
+        border-right-color: black !important; 
+    }
 
     /* Button/Container style */
     .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4 {
-        border: 1px solid !important;
+        border: 1px solid;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
+        border-top-color: var(--menu-color-highlight);
+        border-bottom-color: var(--menu-color-shadow);
+        border-left-color: var(--menu-color-highlight);
+        border-right-color: var(--menu-color-shadow); 
+        color: white !important;
+    }
+    
+    /* Override default styling */
+    .contact, .url-info {
+        border: 1px solid !important;
         border-top-color: var(--menu-color-highlight) !important;
         border-bottom-color: var(--menu-color-shadow) !important;
         border-left-color: var(--menu-color-highlight) !important;
-        border-right-color: var(--menu-color-shadow) !important; 
-        color: white !important;
+        border-right-color: var(--menu-color-shadow) !important;
     }
 
     /* Disable margin on 'Edit profile' link */
@@ -40,14 +61,6 @@
         margin: 0px;
     }
 
-    /* Button hover style */
-    .mood a:focus {
-        outline-style: dotted;
-        outline-color: black;
-        outline-offset: -2px;
-        outline-width: 1px;
-        border: 1px solid black !important;
-    }
 
     /* Extra padding for button-like elements */
     .mood a, .links > li, .profile-info > .inner, .logout-btn {
@@ -81,6 +94,7 @@
         max-width: 0px;
         position: relative;
         display: flex;
+        counter-reset: btns;
     }
     .mood p:nth-child(2) > b::before {
         content: "View my:";
@@ -90,6 +104,19 @@
     .mood p:nth-child(2) > b a {
         visibility: initial;
         height: min-content;
+    }
+    .mood p:nth-child(2) > b a:nth-child(1) {
+        position: absolute;
+        left: 55px;
+    }
+    .mood p:nth-child(2) > b a:nth-child(2) {
+        position: absolute;
+        left: 105px;
+    }
+    .mood p:nth-child(2) > b a:nth-child(3) {
+        position: absolute;
+        white-space: nowrap;
+        left: 180px;
     }
     /* end of Mood styles */
 
@@ -114,7 +141,7 @@
     .f-col { 
         padding: 8px;
     }
-    .f-col:hover { 
+    .f-col:hover, .f-col:focus-within { 
         background-color: var(--list-selected);
     }
     .f-col > a {
@@ -144,7 +171,7 @@
     }
     
     /* Highlight friend on hover with the same color as the server select in hl1 */
-    .person:hover {
+    .person:hover, .person:focus-within {
         background-color: var(--list-selected);
     }
     .person a {
