@@ -9,18 +9,20 @@
         --list-color-shadow: #89927F;
     
         --list-selected: #958831;
-    
     }
     
     body {
         background: #212121;
     }
     
+    /* Disable the white background between the main content and the header */
     main {
         background: none !important;
     }
     
-    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer {
+
+    /* Button/Container style */
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner {
         border: 1px solid !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
@@ -30,7 +32,27 @@
         border-right-color: var(--menu-color-shadow) !important; 
         color: white !important;
     }
-    
+
+    /* Disable margin on 'Edit profile' link */
+    .profile-info > .inner > h3 {
+        margin: 0px;
+    }
+
+    /* Button hover style */
+    .mood a:focus {
+        outline-style: dotted;
+        outline-color: black;
+        outline-offset: -2px;
+        outline-width: 1px;
+        border: 1px solid black !important;
+    }
+
+    /* Extra padding for button-like elements */
+    .mood a, .links > li, .profile-info > .inner {
+        padding: 8px 9px;
+    }
+
+    /* Inset/List style */
     .goldsrc-list, .inner, .table-section, input {
         border: 1px solid !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
@@ -42,43 +64,47 @@
         color: white !important;
     }
     
+    /* Styles for the generic table elements in the 'Contacting X', 'Interests' and 'Links' sections */
     .details-table td {
         background-color: transparent !important;
         color: white !important;
         font-weight: normal !important;
     }
     
+    /* General styles for link elements */
     a {
         font-weight: bold !important;
         color: white !important;
     }
     
+    /* Styles for the buttons of the 'Contacting X' section */
     .f-col > a {
         padding: 3px;
     }
-    
+
+    /* Disable default background for 'Contacting X' section header */
     .contact > .heading {
         background: transparent !important;
         font-weight: bold;
     }
     
     
+    /* friends list styles */
     
-    /* friends list */
-    
+    /* Set the friends container to a table layout */
     .friends-grid {
         display: table;
         table-layout: fixed;
         width: 100%;
     }
-    
+
+    /* Set each friend to a table row */
     .person {
-        /* display: grid !important;
-        grid-template-columns: auto auto !important; */
         display: table-row !important;
         width: 100% !important;
     }
     
+    /* Highlight friend on hover with the same color as the server select in hl1 */
     .person:hover {
         background-color: var(--list-selected);
     }
@@ -87,11 +113,15 @@
     }
     .person p {
         color: white !important;
-        text-align: start;
+        text-align: start !important;
+        padding-left: 8px;
     }
+
+    /* Make images smaller to fit the style, and disable default margins */
     .person img {
         max-width: 20px !important;
         max-height: 20px !important;
+        margin: 0 !important;
     }
     
     .friends-grid {
@@ -105,6 +135,11 @@
     }
     .friends ~ .friends h4::after {
         content: "";
+    }
+
+    .mood p {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     
     </style>
