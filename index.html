@@ -40,7 +40,7 @@
     }
 
     /* Button/Container style */
-    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, .url-info, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4, .blog-preview {
+    .goldsrc-container, .profile, .contact, .heading, a.more, .links, .links > li, .top, button, footer, .mood a, .profile-info > .inner, #comments.friends > .inner > p, #comments.friends .comment-replies, .comment-replies small > a:not(:first-child), .report, .blurbs > .inner > .section > h4, .blog-preview {
         border: 1px solid;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
         background-color: var(--menu-color) !important;
@@ -51,8 +51,11 @@
         color: white !important;
     }
     
+    .url-info {
+        border: none !important;
+    }
     /* Override default styling */
-    .contact, .url-info {
+    .contact {
         border: 1px solid !important;
         border-top-color: var(--menu-color-highlight) !important;
         border-bottom-color: var(--menu-color-shadow) !important;
@@ -115,6 +118,9 @@
     /* end of blurbs */
 
     /* begin of Mood styles */
+    .mood a {
+        white-space: nowrap;
+    }
     .mood p:nth-child(2) > b {
         visibility: hidden;
         max-width: 0px;
@@ -229,8 +235,15 @@
         max-height: 20px !important;
         margin: 0 !important;
     }
+
+    span.verified-info[title="Verified User"] {
+        margin-left: 3px;
+    }
     
     /* Start of custom friend counter */
+    .friends:not([id]) > .inner {
+        padding: 0px !important;
+    }
     .friends:not([id]) > .inner > p {
         max-height: 0px;
         margin: 0px;
@@ -242,7 +255,7 @@
     .friends:not([id]) > .inner > p > b:first-child > span {
         visibility: initial;
         position: absolute;
-        top: -26px;
+        top: -19px;
         right: -50px;
         color: white;
     }
