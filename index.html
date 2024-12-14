@@ -198,8 +198,10 @@
 
     /* Set each friend to a table row */
     .person {
-        display: table-row !important;
+        display: flex !important;
         width: 100% !important;
+        height: fit-content;
+        padding: 0px !important;
     }
     
     /* Highlight friend on hover with the same color as the server select in hl1 */
@@ -207,13 +209,18 @@
         background-color: var(--list-selected);
     }
     .person a {
-        display: table-cell !important;
+        display: flex !important;
+        width: 50%;
+        padding: 5px 0px;
     }
     .person p {
         color: white !important;
         text-align: start !important;
         padding-left: 8px;
+        display: flex;
+        align-items: center;
         font-weight: normal !important;
+        margin: 0px !important;
     }
 
     /* Make images smaller to fit the style, and disable default margins */
@@ -236,7 +243,7 @@
         visibility: initial;
         position: absolute;
         top: -26px;
-        right: -38px;
+        right: -50px;
         color: white;
     }
     .friends:not([id]) > .inner > p > b:first-child > span::before {
@@ -299,3 +306,5 @@
     }
     
     </style>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oy1lsys2leg?si=0wpL4CyZb_-d6wt2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
