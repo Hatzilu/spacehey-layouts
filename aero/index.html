@@ -1,0 +1,64 @@
+<style>
+    .taskbar {
+      z-index: 5757;
+    }
+
+    .summ {
+        position: fixed;
+        left: 0;
+        bottom: -10px;
+        content: ' ';
+        width: 100%;
+        height: 50px;
+        z-index: 5757;
+        display: flex;
+        justify-content: start;
+    }
+    .taskbarSummary {
+      width: 100%;
+      display: flex;
+      height: 40px;
+      background-color: lightblue;
+      opacity: .3;
+      backdrop-filter: blur(97px);
+      border-top: 1px solid #80b0d9;
+      outline: 1px solid #00446f;
+      user-select: none;
+      pointer-events: none;
+      justify-content: start;
+    }
+    .launcherIcon {
+      position: absolute;
+      z-index: 57571;
+    }
+    .launcher {
+      width: 25vw;
+      height: 25vh;
+      position: fixed;
+      left: 0;
+      bottom: 42px;
+      outline: solid 1px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+      padding: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(75, 75, 85, 0.3);
+    }
+    .launcherPrograms {
+      background: white;
+    }
+  </style>
+  <details style="z-index: 5757" open="">
+    <summary class="summ">
+      <div class="taskbarSummary"></div>
+      <img
+        width="50"
+        height="50"
+        class="launcherIcon"
+        src="https://cdn.spacehey.net/grouppics/21490_5f9a9e4e69da3413177ce01f3ad0f5bd.png?expires=1740365506&amp;token=059026b7f4473837fc4ad673967c4c13c834fda852f986f1488d80eeb706f354"
+      />
+    </summary>
+    <div class="launcher">
+      <div class="launcherPrograms">hi</div>
+    </div>
+  </details>
